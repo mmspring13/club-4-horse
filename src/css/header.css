@@ -1,0 +1,155 @@
+.header {
+  height: calc(100vh - 7rem);
+  max-height: 100rem;
+  background-color: var(--color-bg);
+  min-height: 70rem;
+  position: relative;
+
+  &__logo {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.header-mesh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*background-image: url('images/mesh-2x.png');*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: cover;*/
+  /*filter: url(#noiseFilter);*/
+  width: 100%;
+  height: 100%;
+  /*opacity: .1;*/
+  z-index: 15;
+  background-color: white;
+}
+
+.header-container {
+  padding-top: 2.6rem;
+}
+
+.header-content {
+  max-width: 54.2rem;
+  margin-top: 6.2rem;
+  z-index: 20;
+  position: relative;
+  &__title {
+    &:nth-of-type(2) {
+      text-align: center;
+    }
+  }
+  &__subtitle {
+    text-align: center;
+    font-weight: 400;
+    margin-top: 2.4rem;
+  }
+}
+
+.header-buttons {
+  display: flex;
+  column-gap: 1.6rem;
+  margin-top: 4rem;
+  &__button {
+    max-height: 7.2rem;
+  }
+}
+
+.header-images {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  background-color: rgba(0, 100, 200, .5);
+  /*filter: url(#noiseFilter);*/
+  &__disk {
+    position: absolute;
+    right: 0;
+    left: auto;
+    background-image: url('images/header/disk.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 66rem;
+    transform: translateY(-8.4rem);
+    bottom: 0rem;
+    aspect-ratio: 1;
+    z-index: 5;
+  }
+  &__city-wrapper {
+    position: absolute;
+    width: 167.371rem;
+    height: 46.25rem;
+    bottom: 0;
+    right: 0;
+    filter: contrast(180%);
+    z-index: 10;
+  }
+  &__city {
+    position: absolute;
+    width: 162.35rem;
+    height: 45.25rem;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    bottom: 0;
+    right: -10.3rem;
+  }
+  &__bg {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    width: 168rem;
+    height: 46.38rem;
+    z-index: 10;
+    right: -11.3rem;
+    bottom: 0px;
+    top: auto;
+  }
+  /*&__city {*/
+  /*  position: absolute;*/
+  /*  background-image: url('images/header/city-2x.png');*/
+  /*  background-repeat: no-repeat;*/
+  /*  background-size: contain;*/
+  /*  width: 100%;*/
+  /*  height: 100%;*/
+  /*  !*background-position-x: -11rem;*!*/
+  /*  background-position-y: calc(100% + 4rem);*/
+  /*  bottom: 0;*/
+  /*  top: auto;*/
+  /*  right: 0;*/
+  /*  left: auto;*/
+  /*  z-index: 10;*/
+  /*}*/
+  &__king {
+    position: absolute;
+    width: 10.378rem;
+    height: 25.59rem;
+    right: 0;
+    z-index: 5;
+    bottom: 0;
+    transform: translate(-65.5rem, -18rem);
+  }
+  &__knight {
+    position: absolute;
+    width: 15.387rem;
+    height: 24.4rem;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  .header-buttons {
+    display: flex;
+    row-gap: 1.4rem;
+    flex-wrap: wrap;
+    &__button {
+      width: 100%;
+      max-height: none;
+      &__break {
+        display: none;
+      }
+    }
+  }
+}

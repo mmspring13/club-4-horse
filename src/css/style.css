@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Golos Text", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 62.5%;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-dark-charcoal);
+}
+
+
+.app-feed {
+  height: 6rem;
+  background-color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__words {
+    background-image: url('images/running-line.png');
+    background-repeat: repeat-x;
+    animation: marquee 40s infinite linear alternate-reverse;
+    height: 100%;
+    width: 100%;
+    background-position-y: center;
+    background-size: cover;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 136.6rem;
+  padding-left: 7.2rem;
+  padding-right: 7.2rem;
+}
+
+@keyframes marquee {
+  0% {
+    background-position-x: 0;
+  }
+
+  100% {
+    background-position-x: -100%;
+  }
+}

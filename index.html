@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+    <title>Vite + TS</title>
+  </head>
+  <body>
+
+    <header class="header">
+<!--      <div class="header-mesh"></div>-->
+      <div class="header-images">
+        <div class="header-images__disk"></div>
+<!--        <div class="header-images__bg"></div>-->
+        <img
+          src="images/header/king-2x.png"
+          alt="king"
+          class="header-images__king"
+        />
+        <img
+          src="images/header/queen-2x.png"
+          alt="queen"
+          class="header-images__queen"
+        />
+        <div class="header-images__city-wrapper">
+          <img
+            src="images/header/city-2x.png"
+            alt="city"
+            class="header-images__city"
+          />
+          <img class="header-images__bg" src="images/header/path-2x.png" alt="path" />
+        </div>
+<!--        <div class="header-images__city"></div>-->
+        <img
+          src="images/header/knight-2x.png"
+          alt="king"
+          class="header-images__knight"
+        />
+        <img
+          src="images/header/pawn-2x.png"
+          alt="pawn"
+          class="header-images__pawn"
+        />
+<!--        <div class="header-images__figures-1">-->
+<!--          <img-->
+<!--            src="images/header/king-2x.png"-->
+<!--            alt="king"-->
+<!--            class="header-images__king"-->
+<!--          />-->
+<!--        </div>-->
+<!--        <div class="header-images__figures-2"></div>-->
+      </div>
+      <div class="container header-container">
+        <div class="header__logo">
+          <img src="/images/logo.svg" alt="logo" class="header__logo__img" />
+        </div>
+        <div class="header-content">
+          <h1 class="text-3xl header-content__title decor-font">
+            Превратите уездный город
+          </h1>
+          <h1 class="text-3xl header-content__title decor-font">в столицу земного шара</h1>
+          <h2 class="text-sm header-content__subtitle">
+            Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам
+          </h2>
+          <div class="header-buttons">
+            <button class="button header-buttons__button" type="button">
+              Поддержать <br class="header-buttons__button__break" /> шахматную мысль
+            </button>
+            <button class="button header-buttons__button button_outline" type="button">
+              Подробнее <br class="header-buttons__button__break" /> о турнире
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="app-feed">
+      <div class="app-feed__words"></div>
+    </div>
+
+    <svg width="0" height="0">
+      <defs>
+        <filter id="noiseFilter">
+          <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="0.65"
+                  numOctaves="3"
+                  seed="1"
+                  stitchTiles="stitch"
+                  result="noise"
+          />
+          <feColorMatrix
+                  in="noise"
+                  type="matrix"
+                  values="0 0 0 0 0.9
+              0 0 0 0 0.9
+              0 0 0 0 0.9
+              0 0 0 1 0"
+                  result="coloredNoise"
+          />
+          <feComposite
+                  in="SourceGraphic"
+                  in2="coloredNoise"
+                  operator="in"
+          />
+        </filter>
+      </defs>
+    </svg>
+
+<!--    <div id="app">-->
+<!--      <h2>Lorem ipsum dolor sit.</h2>-->
+
+<!--      <div class="app-feeds">-->
+<!--        <div class="app-feed __1">-->
+<!--          <div class="app-feed__item text-base">-->
+<!--            Дело помощи утопающим — дело рук самих утопающих!-->
+<!--          </div>-->
+<!--          <div class="app-feed__item text-base">-->
+<!--            Шахматы двигают вперёд не только культуру, но и экономику!-->
+<!--          </div>-->
+<!--          <div class="app-feed__item text-base">-->
+<!--            Лед тронулся, господа присяжные заседатели!-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="app-feed __2">-->
+<!--          <div class="app-feed__item text-base">-->
+<!--            Дело помощи утопающим — дело рук самих утопающих!-->
+<!--          </div>-->
+<!--          <div class="app-feed__item text-base">-->
+<!--            Шахматы двигают вперёд не только культуру, но и экономику!-->
+<!--          </div>-->
+<!--          <div class="app-feed__item text-base">-->
+<!--            Лед тронулся, господа присяжные заседатели!-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

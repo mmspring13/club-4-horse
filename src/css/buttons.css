@@ -1,0 +1,33 @@
+.button {
+  padding: 2rem 0;
+  background-color: var(--color-dark-charcoal);
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 130%;
+  outline: none;
+  border: none;
+  border-radius: 6.6rem;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+
+  }
+
+  &_outline {
+    background-color: transparent;
+    border: .2rem solid var(--color-eerie);
+    color: var(--color-eerie);
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  .button {
+    padding: 1.8rem 0;
+  }
+}

@@ -1,0 +1,14 @@
+:root {
+  --color-maize: #FBCE51;
+  --color-dark-charcoal: #313131;
+  --color-eerie: #1F1F1F;
+  --color-white: #fff;
+  --color-link: #3057A2;
+  --color-accent: #F54932;
+  --color-bg: #E9DED4;
+  --max-width: 136rem;
+  --ds-h-pd: 7.2rem;
+  --mb-h-pd: 2rem;
+
+  --sm-breakpoint: 640px;
+}
