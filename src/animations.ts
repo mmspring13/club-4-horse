@@ -42,3 +42,18 @@ export const shiftTopFigures = () => {
 
   window.addEventListener('scroll', () => fn());
 };
+
+export const shiftGameTicket = () => {
+  const ticket = document.querySelector('.js_game_ticket') as HTMLElement;
+
+  const fn = throttle(() => {
+    const y = window.scrollY / 4;
+    if (window.innerWidth < 640) {
+      ticket.style.transform = `translate(0, ${200 - y}px) rotate(90deg) scale(.77)`;
+    } else {
+      ticket.style.transform = `translate(0, ${200 - y}px) rotate(90deg)`;
+    }
+  }, 10);
+
+  window.addEventListener('scroll', () => fn());
+};

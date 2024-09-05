@@ -1,5 +1,5 @@
 import './css.ts';
-import {activateBannerAnimation, shiftTopFigures} from './animations.ts';
+import {activateBannerAnimation, shiftTopFigures, shiftGameTicket} from './animations.ts';
 import { SliderControl, Slider } from "./slider.ts";
 
 const employeesSlider = new Slider(document.querySelector('.employees-slider') as HTMLElement);
@@ -17,3 +17,4 @@ new SliderControl(
 
 activateBannerAnimation();
 shiftTopFigures();
+shiftGameTicket();
