@@ -11,3 +11,5 @@ yarn dev
 yarn build
 yarn preview
 ```
+
+designed by figma
