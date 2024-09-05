@@ -8,17 +8,17 @@
     grid-column-start: col-start;
     grid-row-start: row;
     position: relative;
-    top: 27px;
   }
 
   &__title-2 {
     grid-column-start: col-start;
     position: relative;
+    top: -54%;
     text-indent: 160px;
-    top: -25px;
 
     @media screen and (max-width: 1300px) {
-      top: auto;
+      grid-row-start: none;
+      top: 0;
       text-indent: 0;
     }
   }
