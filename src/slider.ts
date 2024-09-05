@@ -1,3 +1,5 @@
+import arrowRight from './img/arrow-right.svg';
+
 export class Slider {
   el: HTMLElement;
   currentSlide: { el: HTMLElement; idx: number };
@@ -120,7 +122,7 @@ export class SliderControl {
     const prev = this.ctrl.querySelector('[data-prev]') as HTMLButtonElement;
     const next = this.ctrl.querySelector('[data-next]') as HTMLButtonElement;
     const arrow = document.createElement('img');
-    arrow.src = 'images/arrow-right.svg';
+    arrow.src = arrowRight;
     arrow.alt = 'arrow';
     prev.classList.add('slider-control__btn', 'button', '_prev');
     next.classList.add('slider-control__btn', 'button', '_next');
