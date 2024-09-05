@@ -167,6 +167,9 @@
 
   &__plane {
     overflow: hidden;
+    background-image: url('images/plane-2x.png');
+    background-size: cover;
+    background-position: center;
     width: 376.6px;
     height: 140.4px;
     z-index: 10;
