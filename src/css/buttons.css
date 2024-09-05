@@ -1,33 +1,74 @@
 .button {
-  padding: 2rem 0;
-  background-color: var(--color-dark-charcoal);
+  padding: 20px 12px;
+  background-color: var(--color-eerie);
   color: var(--color-white);
   font-weight: 500;
-  font-size: 1.6rem;
+  font-size: 16px;
   line-height: 130%;
   outline: none;
   border: none;
-  border-radius: 6.6rem;
-  width: 100%;
+  border-radius: 66px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  transition: .2s linear;
+  width: 100%;
+
+  &:focus {
+    outline: 1px solid var(--color-link);
+  }
 
   &:hover {
-
+    background-color: var(--color-maize);
+    color: var(--color-eerie);
   }
 
   &_outline {
     background-color: transparent;
-    border: .2rem solid var(--color-eerie);
+    border: 2px solid var(--color-eerie);
     color: var(--color-eerie);
+
+    &:hover {
+      background-color: var(--color-eerie);
+      color: var(--color-white);
+    }
+  }
+
+  &_small {
+    padding: 8px 12px;
+    background-color: transparent;
+    border: 1px solid var(--color-link);
+    border-radius: 62px;
+    color: var(--color-link);
+    font-size: 16px;
+    line-height: 120%;
+
+    &:hover {
+      background-color: var(--color-link);
+      color: var(--color-white);
+    }
+  }
+
+  &:disabled {
+    background-color: var(--color-light-silver);
   }
 }
 
-@media screen and (max-width: 64rem) {
+@media screen and (max-width: 640px) {
   .button {
-    padding: 1.8rem 0;
+    /*padding: 1.8rem 0;*/
+    &_outline {
+      border-color: rgba(255, 255, 255, .85);
+      background-color: rgba(255, 255, 255, .85);
+      &:hover {
+        background-color: var(--color-dark-charcoal);
+        border-color: var(--color-dark-charcoal);
+      }
+    }
   }
 }

@@ -1,0 +1,186 @@
+.game-banner {
+  width: 474px;
+  aspect-ratio: 474 / 527;
+  position: relative;
+  background-image: url(images/game/banner-2x.png);
+  background-size: 88%;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &__img {
+    position: absolute;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    animation: 1s mesh-shift steps(5, end) infinite;
+    transition-duration: 400ms;
+  }
+
+  /*&__banner {*/
+  /*  background-image: url('images/game/banner-2x.png');*/
+  /*  background-size: cover;*/
+  /*  max-width: 405.57px;*/
+  /*  height: 437.5px;*/
+  /*  aspect-ratio: 405/437;*/
+  /*  !*width: 100%;*!*/
+  /*  position: absolute;*/
+  /*  !*transform: rotate(-90deg);*!*/
+  /*  top: 0;*/
+  /*  bottom: 0;*/
+  /*  left: 20px;*/
+  /*  margin: auto;*/
+  /*}*/
+
+  &__player {
+    width: 338.6px;
+    aspect-ratio: 338.63/340.3;
+    inset: 0;
+    margin: auto;
+    z-index: 5;
+    position: absolute;
+    background-image: url('images/mesh-2x.png'), url('images/game/player-2x.png');
+    background-size: cover;
+    background-position: center, center;
+    transform: translateZ(0);
+    -webkit-clip-path: url(#playerPath);
+    clip-path: url(#playerPath);
+    background-blend-mode: color-burn;
+    animation: 1s mesh-shift steps(5, end) infinite;
+  }
+
+  &__ticket {
+    background-image: url('images/mesh-2x.png'), url('images/game/ticket-2x.png');
+    background-size: cover;
+    background-position: center, center;
+    background-blend-mode: color-burn;
+    width: 240px;
+    aspect-ratio: 240.58/121.68;
+    transform: rotate(90deg);
+    top: 58px;
+    right: -58px;
+    left: auto;
+  }
+
+  &__knight {
+    clip-path: url(#knightPath);
+    width: 87px;
+    aspect-ratio: 87.64/148.92;
+    /*transform: rotate(145.05deg);*/
+    transform: rotate(150deg) scale(.5);
+    background-image: url('images/mesh-2x.png'), url('images/game/knight-2x.png');
+    background-size: cover;
+    background-position: center, center;
+    background-blend-mode: color-burn;
+    bottom: -72px;
+    left: 160px;
+    z-index: 15;
+
+    &._active {
+      left: 100px;
+      bottom: 10px;
+      transform: rotate(505.05deg) scale(1);
+      @media screen and (max-width: 640px) {
+        transform: rotate(505.05deg) scale(.77);
+      }
+    }
+  }
+
+  &__handle {
+    clip-path: url(#handlePath);
+    width: 172px;
+    aspect-ratio: 167.3/226.74;
+    /*transform: rotate(39.89deg);*/
+    background-image: url('images/mesh-2x.png'), url('images/game/handle-2x.png');
+    background-size: cover;
+    background-position: center, center;
+    background-blend-mode: color-burn;
+    bottom: -70px;
+    right: 48px;
+    z-index: 15;
+
+    &._active {
+      transform: rotate(39.89deg);
+      @media screen and (max-width: 640px) {
+        transform: rotate(39.89deg) scale(.77);
+      }
+    }
+  }
+
+  &__flash {
+    background-image: url('images/mesh-2x.png'), url('images/game/flash-1.svg');
+    width: 216px;
+    aspect-ratio: 213.6/245.1;
+    transform: rotate(-90deg) scale(0);
+    background-size: cover;
+    clip-path: url(#flashOnePath);
+    background-position: center, center;
+    background-blend-mode: color-burn;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+
+    &._active {
+      transform: rotate(-90deg) scale(1);
+      @media screen and (max-width: 640px) {
+        transform: rotate(-90deg) scale(.77);
+      }
+    }
+  }
+
+  &__flash-2 {
+    background-image: url('images/mesh-2x.png'), url('images/game/flash-2.svg');
+    width: 528px;
+    aspect-ratio: 529/343.81;
+    transform: rotate(2deg);
+    background-size: cover;
+    clip-path: url(#flashSecondPath);
+    background-position: center, center;
+    background-blend-mode: color-burn;
+    top: -16px;
+    left: -40px;
+    z-index: 5;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .game-banner {
+    width: 100%;
+    &__img {
+      transform: scale(.77);
+    }
+    &__ticket {
+      transform: rotate(90deg) scale(.77);
+      top: 25px;
+      right: -87px;
+    }
+    &__flash {
+      transform: rotate(-90deg) scale(0);
+      left: -40px;
+    }
+    &__flash-2 {
+      transform: scale(.58);
+      left: -20%;
+      right: 0;
+      margin: auto;
+      top: -46px;
+      bottom: auto;
+    }
+    &__knight {
+      left: 37%;
+      bottom: -54px;
+      transform: rotate(145.05deg) scale(.77);
+      &._active {
+        left: 40px;
+        bottom: 10px;
+      }
+    }
+    &__handle {
+      right: 10px;
+    }
+  }
+}
+
+@keyframes handle {
+  to {
+    transform: rotate(39.89deg);
+  }
+}

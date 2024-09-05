@@ -1,0 +1,8 @@
+@keyframes mesh-shift {
+  0% {
+    background-position: 180px 200px, center;
+  }
+  100% {
+    background-position: center, center;
+  }
+}

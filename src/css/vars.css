@@ -6,9 +6,11 @@
   --color-link: #3057A2;
   --color-accent: #F54932;
   --color-bg: #E9DED4;
-  --max-width: 136rem;
-  --ds-h-pd: 7.2rem;
-  --mb-h-pd: 2rem;
+  --color-silver: #D0D0D0;
+  --color-light-silver: #D9D9D9;
+  --max-width: 1360px;
+  --ds-h-pd: 72px;
+  --mb-h-pd: 20px;
 
   --sm-breakpoint: 640px;
 }

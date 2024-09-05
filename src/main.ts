@@ -1,11 +1,18 @@
-import './css/style.css';
-import './css/vars.css';
-import './css/typography.css';
-import './css/header.css';
-import './css/buttons.css';
+import './css.ts';
+import {activateBannerAnimation, shiftTopFigures} from './animations.ts';
+import { SliderControl, Slider } from "./slider.ts";
 
-// document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-//   <div>
-//   </div>
-// `
+const employeesSlider = new Slider(document.querySelector('.employees-slider') as HTMLElement);
+new SliderControl(
+  employeesSlider,
+  document.querySelector('.employees-slider-control') as HTMLElement,
+);
 
+const stageSlider = new Slider(document.querySelector('.stage-slider') as HTMLElement);
+new SliderControl(
+  stageSlider,
+  document.querySelector('.stage-slider-control') as HTMLElement,
+);
+
+activateBannerAnimation();
+shiftTopFigures();

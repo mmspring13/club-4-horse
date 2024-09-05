@@ -1,8 +1,9 @@
 .header {
-  height: calc(100vh - 7rem);
-  max-height: 100rem;
+  height: 700px;
   background-color: var(--color-bg);
-  min-height: 70rem;
+  background-image: url('images/header/bg-2x.png');
+  background-position: right;
+  background-size: cover;
   position: relative;
 
   &__logo {
@@ -27,32 +28,45 @@
 }
 
 .header-container {
-  padding-top: 2.6rem;
+  height: 100%;
+  padding-top: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 130px;
 }
 
 .header-content {
-  max-width: 54.2rem;
-  margin-top: 6.2rem;
+  max-width: 542px;
+  margin-top: 62px;
   z-index: 20;
+  height: 100%;
   position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   &__title {
+    text-transform: uppercase;
     &:nth-of-type(2) {
       text-align: center;
     }
+    &:nth-of-type(3) {
+      text-align: right;
+    }
   }
   &__subtitle {
+    display: inline-block;
     text-align: center;
-    font-weight: 400;
-    margin-top: 2.4rem;
+    margin-top: 24px;
   }
 }
 
 .header-buttons {
   display: flex;
-  column-gap: 1.6rem;
-  margin-top: 4rem;
+  column-gap: 16px;
+  margin-top: 40px;
   &__button {
-    max-height: 7.2rem;
+    max-height: 72px;
   }
 }
 
@@ -61,95 +75,122 @@
   width: 100%;
   overflow: hidden;
   height: 100%;
-  background-color: rgba(0, 100, 200, .5);
-  /*filter: url(#noiseFilter);*/
+  background-color: var(--color-bg);
+  background-image: url('images/mesh-2x.png');
+  background-size: cover;
+  background-blend-mode: color-burn;
+  /*animation: 8s mesh-shift steps(5, end) infinite;*/
   &__disk {
     position: absolute;
+    top: -45px;
     right: 0;
     left: auto;
-    background-image: url('images/header/disk.svg');
+    background-blend-mode: color-burn;
+    background-image: url('images/mesh-2x.png'), url('images/header/disk.svg');
+    border-radius: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 66rem;
-    transform: translateY(-8.4rem);
-    bottom: 0rem;
+    width: 660px;
+    /*transform: translateY(-8.4rem);*/
     aspect-ratio: 1;
     z-index: 5;
   }
+  &__disk-wrapper {
+    width: 100%;
+    height: 100%;
+    max-width: 1294px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+  }
   &__city-wrapper {
     position: absolute;
-    width: 167.371rem;
-    height: 46.25rem;
-    bottom: 0;
-    right: 0;
-    filter: contrast(180%);
-    z-index: 10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
   }
   &__city {
+    width: 100%;
+    height: 100%;
+    max-width: 1623px;
+    max-height: 452px;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    margin: auto;
     position: absolute;
-    width: 162.35rem;
-    height: 45.25rem;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    bottom: 0;
-    right: -10.3rem;
+    background-image: url('images/header/city-2x.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 15;
   }
-  &__bg {
-    position: absolute;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    width: 168rem;
-    height: 46.38rem;
-    z-index: 10;
-    right: -11.3rem;
-    bottom: 0px;
-    top: auto;
-  }
-  /*&__city {*/
-  /*  position: absolute;*/
-  /*  background-image: url('images/header/city-2x.png');*/
-  /*  background-repeat: no-repeat;*/
-  /*  background-size: contain;*/
-  /*  width: 100%;*/
-  /*  height: 100%;*/
-  /*  !*background-position-x: -11rem;*!*/
-  /*  background-position-y: calc(100% + 4rem);*/
-  /*  bottom: 0;*/
-  /*  top: auto;*/
-  /*  right: 0;*/
-  /*  left: auto;*/
-  /*  z-index: 10;*/
-  /*}*/
   &__king {
     position: absolute;
-    width: 10.378rem;
-    height: 25.59rem;
+    width: 103.78px;
+    height: 255.9px;
+    background-image: url('images/mesh-2x.png'), url('images/header/king-2x.png');
+    background-size: cover;
+    background-blend-mode: color-burn;
+    clip-path: url(#headerKingPath);
+    animation: 2s mesh-shift steps(5, end) infinite;
+    z-index: 10;
     right: 0;
-    z-index: 5;
     bottom: 0;
-    transform: translate(-65.5rem, -18rem);
+    left: 0;
+    margin: auto;
+    transform: translate(100px, -180px) rotate(-6deg);
+    transition: 400ms;
+  }
+  &__queen {
+    transition: 200ms;
+    position: absolute;
+    clip-path: url(#headerQueenPath);
+    animation: 2s mesh-shift steps(5, end) infinite;
+    width: 113.16px;
+    height: 252.44px;
+    background-image: url('images/mesh-2x.png'), url('images/header/queen-2x.png');
+    background-blend-mode: color-burn;
+    background-size: cover;
+    z-index: 10;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transform: translate(450px, -276px) rotate(8deg);
+
+  }
+  &__pawn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 82.6px;
+    height: 122.2px;
+    object-fit: contain;
+    z-index: 15;
+    transform: translate(-230%, -20px);
   }
   &__knight {
     position: absolute;
-    width: 15.387rem;
-    height: 24.4rem;
+    width: 153.87px;
+    height: 244px;
+    right: -290px;
+    bottom: 0;
     object-fit: contain;
+    transform: translate(-655px, 40px);
+    z-index: 15;
   }
 }
 
-@media screen and (max-width: 64rem) {
+@media screen and (max-width: 640px) {
   .header-buttons {
     display: flex;
-    row-gap: 1.4rem;
+    row-gap: 14px;
     flex-wrap: wrap;
     &__button {
       width: 100%;
       max-height: none;
-      &__break {
-        display: none;
-      }
     }
   }
 }

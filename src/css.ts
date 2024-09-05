@@ -1,0 +1,9 @@
+import './css/style.css';
+import './css/vars.css';
+import './css/typography.css';
+import './css/header.css';
+import './css/buttons.css';
+import './css/main.css';
+import './css/slider.css';
+import './css/game-banner.css';
+import './css/animations.css';

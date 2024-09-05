@@ -1,38 +1,77 @@
 .text-xs {
   line-height: 120%;
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 
 .text-sm {
   line-height: 130%;
-  font-size: 1.8rem;
+  font-size: 18px;
 }
 
 .text-base {
   line-height: 120%;
-  font-size: 2rem;
+  font-size: 20px;
 }
 
 .text-lg {
   line-height: 135%;
-  font-size: 3.6rem;
+  font-size: 36px;
 }
 
 .text-xl {
   line-height: 120%;
-  font-size: 2.4rem;
+  font-size: 24px;
 }
 
 .text-2xl {
-  font-size: 5.4rem;
+  font-size: 54px;
   line-height: 120%;
 }
 
 .text-3xl {
   line-height: 110%;
-  font-size: 6rem;
+  font-size: 60px;
 }
 
-.decor-font {
+@media screen and (max-width: 640px) {
+  .text-sm {
+    line-height: 130%;
+    font-size: 18px;
+  }
+
+  .text-base {
+    line-height: 120%;
+    font-size: 18px;
+  }
+
+  .text-lg {
+    line-height: 135%;
+    font-size: 28px;
+  }
+
+  .text-2xl {
+    font-size: 36px;
+    line-height: 120%;
+  }
+
+  .text-3xl {
+    line-height: 110%;
+    font-size: 36px;
+  }
+}
+
+.text-decor {
   font-family: 'Merriweather', sans-serif;
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-link {
+  color: var(--color-link);
+}
+
+.text-uppercase {
+  text-transform: uppercase;
 }
