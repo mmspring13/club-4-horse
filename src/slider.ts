@@ -1,4 +1,5 @@
 import arrowRight from './img/arrow-right.svg';
+import {throttle} from "./utils.ts";
 
 export class Slider {
   el: HTMLElement;
@@ -18,7 +19,7 @@ export class Slider {
     }
     window.addEventListener('resize', this._handleResize.bind(this));
 
-    el.addEventListener('scrollend', this._handleScrollEnd.bind(this));
+    el.addEventListener('scroll', (e) => throttle(this._handleScrollEnd.bind(this), 40)(e));
   }
 
   _handleResize() {
@@ -29,7 +30,6 @@ export class Slider {
   _handleScrollEnd(event: Event) {
     const target = event.target as HTMLElement;
     let nextSlide: { el: HTMLElement; x: number; idx: number } | null = null;
-
     for (let i = 0; i < target.children.length; i++) {
       const el = target.children[i];
 
