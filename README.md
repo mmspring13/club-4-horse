@@ -9,6 +9,6 @@ yarn dev
 ### build
 ```
 yarn build
-cp -r mv dist/images dist/assets # copy images to assets
+mv dist/images dist/assets # move images to assets
 yarn preview
 ```
