@@ -23,6 +23,7 @@ export class Slider {
 
   _handleResize() {
     this.slideWidth = this.slides?.[0].getBoundingClientRect().width;
+    this.el.scrollLeft = 0;
   }
 
   _handleScrollEnd(event: Event) {
@@ -48,7 +49,7 @@ export class Slider {
           this.currentSlide = { el: nextSlide.el, idx: nextSlide.idx };
           this.onChange?.(this);
         }
-      }, { root: target, threshold: 1.0 });
+      }, { root: target });
       obs.observe(el);
     }
   }
@@ -70,12 +71,14 @@ export class Slider {
 export class SliderControl {
   slider: Slider;
   ctrl: HTMLElement;
+  gapBetweenSlides: number;
   segmentsCount: number;
 
-  constructor(slider: Slider, el: HTMLElement) {
+  constructor(slider: Slider, el: HTMLElement, gapBetweenSlides = 20) {
     this.ctrl = el;
 
     this.slider = slider;
+    this.gapBetweenSlides = gapBetweenSlides;
     this.segmentsCount = 0;
     const sChange = this.slider.onChange;
     this.slider.onChange = () => {
@@ -94,8 +97,13 @@ export class SliderControl {
     const dots = this.ctrl.querySelector('[data-dots]') as HTMLElement;
     dots.classList.add('slider-control__dots');
     dots.innerHTML = '';
-    // @todo fix gap = 50
-    const segmentsCount = Math.ceil(((this.slider.slides.length * this.slider.slideWidth + 50) - this.slider.el.getBoundingClientRect().width + this.slider.slideWidth) / this.slider.slideWidth);
+    const sliderWidth = this.slider.slideWidth
+      * this.slider.slides.length + (this.gapBetweenSlides * this.slider.slides.length - 1);
+
+    const sliderRect = this.slider.el.getBoundingClientRect();
+    const totalShifts = Math.floor(sliderWidth / this.slider.slideWidth);
+    let perScreen = sliderRect.width / this.slider.slideWidth;
+    const segmentsCount = Math.ceil(totalShifts - perScreen + 1);
     this.segmentsCount = segmentsCount;
     for (let i = 0; i < segmentsCount; i++) {
       const dot = document.createElement('div');
@@ -105,6 +113,7 @@ export class SliderControl {
       }
       dots.appendChild(dot);
     }
+    this.updateActiveDot();
   }
 
   updateActiveDot() {

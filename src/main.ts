@@ -6,6 +6,7 @@ const employeesSlider = new Slider(document.querySelector('.employees-slider') a
 new SliderControl(
   employeesSlider,
   document.querySelector('.employees-slider-control') as HTMLElement,
+  20,
 );
 
 const stageSlider = new Slider(document.querySelector('.stage-slider') as HTMLElement);
