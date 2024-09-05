@@ -382,6 +382,9 @@
     margin-top: 48px;
     &__photo {
       margin: 24px 0;
+      &__img {
+        animation: none;
+      }
     }
   }
   .section-second {
@@ -424,6 +427,7 @@
         width: 244px;
         &-overlay {
           width: 244px;
+          animation: none;
         }
       }
     }

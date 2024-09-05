@@ -84,7 +84,6 @@
   background-image: url('images/mesh-2x.png');
   background-size: cover;
   background-blend-mode: color-burn;
-  /*animation: 8s mesh-shift steps(5, end) infinite;*/
   &__disk {
     position: absolute;
     top: -45px;
@@ -196,6 +195,14 @@
     &__button {
       width: 100%;
       max-height: none;
+    }
+  }
+  .header-images {
+    &__king {
+      animation: none;
+    }
+    &__queen {
+      animation: none;
     }
   }
 }

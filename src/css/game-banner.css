@@ -9,27 +9,9 @@
 
   &__img {
     position: absolute;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
     animation: 1s mesh-shift steps(5, end) infinite;
     transition-duration: 400ms;
   }
-
-  /*&__banner {*/
-  /*  background-image: url('images/game/banner-2x.png');*/
-  /*  background-size: cover;*/
-  /*  max-width: 405.57px;*/
-  /*  height: 437.5px;*/
-  /*  aspect-ratio: 405/437;*/
-  /*  !*width: 100%;*!*/
-  /*  position: absolute;*/
-  /*  !*transform: rotate(-90deg);*!*/
-  /*  top: 0;*/
-  /*  bottom: 0;*/
-  /*  left: 20px;*/
-  /*  margin: auto;*/
-  /*}*/
-
   &__player {
     width: 338.6px;
     aspect-ratio: 338.63/340.3;
@@ -37,12 +19,12 @@
     margin: auto;
     z-index: 5;
     position: absolute;
-    background-image: url('images/mesh-2x.png'), url('images/game/player-2x.png');
-    background-size: cover;
-    background-position: center, center;
     transform: translateZ(0);
+    background-image: url('images/mesh-2x.png'), url('images/game/player-2x.png');
     -webkit-clip-path: url(#playerPath);
     clip-path: url(#playerPath);
+    background-size: cover;
+    background-position: center, center;
     background-blend-mode: color-burn;
     animation: 1s mesh-shift steps(5, end) infinite;
   }
@@ -145,6 +127,7 @@
   .game-banner {
     width: 100%;
     &__img {
+      animation: none;
       transform: scale(.77);
     }
     &__ticket {
