@@ -206,3 +206,14 @@
     }
   }
 }
+
+@media (pointer:coarse) {
+  .header-images {
+    &__king {
+      animation: none;
+    }
+    &__queen {
+      animation: none;
+    }
+  }
+}

@@ -49,9 +49,9 @@ export const shiftGameTicket = () => {
   const fn = throttle(() => {
     const y = window.scrollY / 4;
     if (window.innerWidth < 640) {
-      ticket.style.transform = `translate(0, ${200 - y}px) rotate(90deg) scale(.77)`;
+      ticket.style.transform = `translate(0, ${300 - y}px) rotate(90deg) scale(.77)`;
     } else {
-      ticket.style.transform = `translate(0, ${200 - y}px) rotate(90deg)`;
+      ticket.style.transform = `translate(0, ${300 - y}px) rotate(90deg)`;
     }
   }, 10);
 

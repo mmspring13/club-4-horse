@@ -123,6 +123,13 @@
   }
 }
 
+@media (pointer:coarse) {
+  .game-banner__img {
+    animation: none;
+  }
+}
+
+
 @media screen and (max-width: 640px) {
   .game-banner {
     width: 100%;

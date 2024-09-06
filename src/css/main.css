@@ -437,3 +437,12 @@
     margin-bottom: 100px;
   }
 }
+
+@media (pointer:coarse) {
+  .section-first__photo__img {
+    animation: none;
+  }
+  .section-four__employee__avatar-overlay {
+    animation: none;
+  }
+}
